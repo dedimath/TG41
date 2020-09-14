@@ -1,0 +1,17 @@
+service: technee-g41
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+
+functions:
+  finbot:
+    handler: handler.finbot
+    events:
+      - http:
+          path: technee-g41
+          method: post
+          cors: true
